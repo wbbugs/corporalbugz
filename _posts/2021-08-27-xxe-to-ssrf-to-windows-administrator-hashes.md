@@ -33,16 +33,17 @@ I also tested whether alternative URL schemes were reachable. FTP connections wo
 
 ![Outbound FTP connection triggered by the XML parser](/assets/img/posts/xxe-ftp.png)
 
-SMB egress was blocked, so capturing NetNTLM authentication that way wasn't available. The application could, however, still reach some internal resources and disclose local files. I wanted to turn that into a finding with clearer impact than simply retrieving `win.ini`.
+SMB egress was blocked, so capturing NetNTLM authentication that way wasn't available.
+
+![SMB blocked](/assets/img/posts/smb.png)
+
+The application could, however, still reach some internal resources and disclose local files. I wanted to turn that into a finding with clearer impact than simply retrieving `win.ini`.
 
 The next targets were files commonly associated with unattended Windows deployment, including `Unattend.xml`, `sysprep.inf` and `sysprep.xml`.
 
-![Attempt to retrieve unattended installation data](/assets/img/posts/xxe-unattended.webp)
-
 One of the accessible deployment files contained an encrypted Administrator credential. Continuing through common deployment-file locations eventually produced a `sysprep.xml` containing base64-encoded account data.
 
-![Payload used while searching for deployment files](/assets/img/posts/xxe-payload.png)
-
+![Attempt to retrieve unattended installation data](/assets/img/posts/xxe-unattended.webp)
 After decoding the value, I had a plaintext Administrator username and password.
 
 ![Administrator credential recovered from deployment configuration](/assets/img/posts/xxe-admin.png)

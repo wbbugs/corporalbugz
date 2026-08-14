@@ -21,12 +21,12 @@ If the phish succeeds it can result in a bearer token and refresh token being ca
 
 Some useful elements in the returned token data are:
 
-1. **Access token** — the JWT used to authenticate requests to a resource.
-2. **Refresh token** — can be used to obtain new access tokens without asking the user to sign in each time.
-3. **Client ID** — identifies the client application that requested the token.
-4. **MRRT/FOCI information** — can influence whether the refresh token can be used to request tokens for other resources or client applications.
-5. **Resource/audience** — indicates the service for which the token is intended.
-6. **Expiry** — access tokens are deliberately short-lived.
+1. **Access token** - the JWT used to authenticate requests to a resource.
+2. **Refresh token** - can be used to obtain new access tokens without asking the user to sign in each time.
+3. **Client ID** - identifies the client application that requested the token.
+4. **MRRT/FOCI information** - can influence whether the refresh token can be used to request tokens for other resources or client applications.
+5. **Resource/audience** - indicates the service for which the token is intended.
+6. **Expiry** - access tokens are deliberately short-lived.
 
 ![Token data shown in a terminal](/assets/img/posts/tokens-token-output.png)
 
@@ -69,8 +69,6 @@ GraphRunner can consume a refresh token and maintain an in-memory collection of 
 Invoke-RefreshGraphTokens -RefreshToken "<SNIP>" -TenantId "domain.com"
 ```
 
-![GraphRunner token refresh output](/assets/img/posts/tokens-graphrunner.png)
-
 `Invoke-AutoTokenRefresh` can then refresh the token set on an interval during an authorised assessment.
 
 #### Outlook
@@ -85,13 +83,21 @@ $OutlookToken.refresh_token
 
 The resulting token pair can be used to validate access to Outlook during the engagement without obtaining the user's password.
 
-![Outlook token testing output](/assets/img/posts/tokens-outlook.png)
+![Outlook token testing output](/assets/img/posts/tokens-outlook-302.png)
+
+Code: will be your refresh token
+id_token: will be your access token
+Send the request and you should receive a 302 response.
+
+![GraphRunner token refresh output](/assets/img/posts/tokens-graphrunner.png)
+You can then request in your browser and after refreshing and you should be logged into Outlook.
 
 #### AzureHound
 
 A Graph refresh token can also be used with AzureHound for authorised tenant enumeration:
 
 ```bash
+RefreshTo-GraphToken -refreshToken <0.Aug<SNIP>SWSa> -domain domain.com
 azurehound -r "<REFRESH_TOKEN>" list --tenant domain.com -o output.json
 ```
 
