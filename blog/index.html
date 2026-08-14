@@ -1,0 +1,5 @@
+---
+layout: default
+title: Blog
+---
+<section class="blog-head"><div class="wrap"><div class="eyebrow">Archive</div><h1>Field notes.</h1><p>Write-ups and practical notes from penetration testing, red teaming, Active Directory and Microsoft cloud security.</p></div></section><section class="section"><div class="wrap"><div class="grid">{% for post in site.posts %}<a class="card" href="{{ post.url | relative_url }}"><div class="thumb has-image" style="background-image:url('{{ post.hero | relative_url }}')"><span class="tag">{{ post.tags | first }}</span></div><div class="card-body"><h3>{{ post.title }}</h3><p>{{ post.excerpt_text }}</p><div class="meta">{{ post.date | date: "%e %b %Y" }} · {{ post.read_time }} min</div></div></a>{% endfor %}</div></div></section>

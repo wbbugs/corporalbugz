@@ -1,0 +1,12 @@
+title: Corporal Bugz
+description: Practical offensive security field notes covering penetration testing, red teaming, Active Directory and Microsoft cloud security.
+url: "https://www.corporalbugz.com"
+baseurl: ""
+permalink: /post/:title/
+markdown: kramdown
+future: false
+plugins:
+  - jekyll-feed
+exclude:
+  - README.md
+  - Gemfile
