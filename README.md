@@ -1,4 +1,4 @@
-# Corporal Bugz — GitHub Pages site
+# Corporal Bugz - GitHub Pages site
 
 Static/Jekyll replacement for the Wix-hosted Corporal Bugz blog.
 
