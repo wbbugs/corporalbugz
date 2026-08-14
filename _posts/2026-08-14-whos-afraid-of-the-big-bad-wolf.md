@@ -7,7 +7,7 @@ permalink: /post/whos-afraid-of-the-big-bad-wolf/
 hero: /assets/img/posts/initial-hero.webp
 tags: [Windows, Active Directory, Red Teaming, ACL, Tokens]
 read_time: 8
-excerpt_text: "Understanding Windows ACLs, access tokens and privileges — and how attackers abuse the relationships between them."
+excerpt_text: "Understanding Windows ACLs, access tokens and privileges - and how attackers abuse the relationships between them."
 ---
 
 Windows access control can appear deceptively simple.
