@@ -8,7 +8,7 @@ tags: [Microsoft 365, Red Teaming, Phishing]
 read_time: 4
 excerpt_text: "How unauthenticated Microsoft 365 mail flow can become a convincing phishing path during a red team."
 ---
-During a recent red team engagement, we uncovered an unexpected gap in a client's Microsoft 365 mail flow. While testing external ingress routes, we found that Exchange Online Protection would accept unauthenticated SMTP traffic — behaviour commonly referred to as **Direct Send**.
+During a recent red team engagement, we uncovered an unexpected gap in a client's Microsoft 365 mail flow. While testing external ingress routes, we found that Exchange Online Protection would accept unauthenticated SMTP traffic - behaviour commonly referred to as **Direct Send**.
 
 Direct Send allows devices and applications such as printers, scanners or line-of-business systems to send mail through Microsoft 365 without authentication when the recipients are inside the same Microsoft 365 organisation.
 
@@ -16,7 +16,7 @@ Direct Send isn't a new phishing vector. What makes it relevant is its persisten
 
 #### The Basics
 
-By walking through a simple SMTP handshake — `EHLO`, `MAIL FROM`, `RCPT TO` — we could demonstrate whether spoofed internal addresses would be accepted by the tenant's mail servers.
+By walking through a simple SMTP handshake - `EHLO`, `MAIL FROM`, `RCPT TO` - we could demonstrate whether spoofed internal addresses would be accepted by the tenant's mail servers.
 
 > Can I talk directly to your tenant's mail servers without logging in or being on your network?
 

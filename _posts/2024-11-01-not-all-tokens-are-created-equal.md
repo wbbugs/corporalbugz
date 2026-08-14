@@ -28,8 +28,6 @@ Some useful elements in the returned token data are:
 5. **Resource/audience** - indicates the service for which the token is intended.
 6. **Expiry** - access tokens are deliberately short-lived.
 
-![Token data shown in a terminal](/assets/img/posts/tokens-token-output.png)
-
 The value to an attacker is that a refresh token can sometimes be used to obtain access tokens for other Microsoft resources. That can open access to services such as Outlook, SharePoint, OneDrive, Teams or Microsoft Graph depending on the original grant, tenant policy and client involved. It can also mean MFA does not need to be re-triggered for every token refresh.
 
 > In short: refresh tokens can potentially be exchanged for new access tokens without repeating the initial interactive sign-in.
@@ -68,6 +66,9 @@ GraphRunner can consume a refresh token and maintain an in-memory collection of 
 ```powershell
 Invoke-RefreshGraphTokens -RefreshToken "<SNIP>" -TenantId "domain.com"
 ```
+You will then have tokens written to the $tokens variable. 
+
+![Token data shown in a terminal](/assets/img/posts/tokens-token-output.png)
 
 `Invoke-AutoTokenRefresh` can then refresh the token set on an interval during an authorised assessment.
 
@@ -85,8 +86,8 @@ The resulting token pair can be used to validate access to Outlook during the en
 
 ![Outlook token testing output](/assets/img/posts/tokens-outlook-302.png)
 
-Code: will be your refresh token
-id_token: will be your access token
+- Code: will be your refresh token
+- id_token: will be your access token
 Send the request and you should receive a 302 response.
 
 ![GraphRunner token refresh output](/assets/img/posts/tokens-graphrunner.png)

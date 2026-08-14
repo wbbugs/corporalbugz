@@ -10,7 +10,7 @@ excerpt_text: "Threat profiling, social engineering, props and the tradecraft be
 ---
 A simple search for red-team training returns a huge amount of material covering cyber intrusion, penetration testing and adversary emulation. One area that receives much less attention is the **physical** dimension of red teaming.
 
-Addressing physical vulnerabilities matters because a well-rounded assessment may need to simulate real-world access to premises, assets or personnel — not just attacks against networks and applications.
+Addressing physical vulnerabilities matters because a well-rounded assessment may need to simulate real-world access to premises, assets or personnel - not just attacks against networks and applications.
 
 #### What is Physical Penetration Testing?
 
@@ -37,9 +37,9 @@ A threat profile identifies the adversaries and attack paths that are relevant t
 
 Useful areas to model include:
 
-- **Adversaries** — who might realistically target the organisation?
-- **Attack vectors** — phishing, social engineering, malware, physical access and other paths.
-- **Tactics, techniques and procedures** — the behaviours the chosen adversary would actually use.
+- **Adversaries** - who might realistically target the organisation?
+- **Attack vectors** - phishing, social engineering, malware, physical access and other paths.
+- **Tactics, techniques and procedures** - the behaviours the chosen adversary would actually use.
 
 Once a threat profile is established, the red team can emulate it against the in-scope targets. Physical testing may be relevant to scenarios involving tailgating, theft, malicious insiders, vandalism or covert access.
 
@@ -53,11 +53,11 @@ Each threat has its own tradecraft: the tactics, techniques and procedures that 
 
 These aren't in any particular order, but I believe a competent physical tester needs skills in several areas:
 
-1. **Social engineering** — confidently navigating conversations, persuading people and eliciting information while maintaining a believable pretext.
-2. **OSINT** — using online research, observation, public records and other lawful sources to learn about buildings, people, suppliers, access controls and working patterns.
-3. **Tooling** — depending on the scope this may include badge-related tooling, lock picks, drop boxes, USB devices, covert cameras, communications equipment or wireless kit.
-4. **Props** — uniforms, fake passes and other items that support an authorised pretext. A believable appearance can sometimes bypass surprisingly strong controls.
-5. **Creativity** — a good cover story needs to survive basic questioning: who are you, why are you there, who sent you and who can confirm the story?
+1. **Social engineering** - confidently navigating conversations, persuading people and eliciting information while maintaining a believable pretext.
+2. **OSINT** - using online research, observation, public records and other lawful sources to learn about buildings, people, suppliers, access controls and working patterns.
+3. **Tooling** - depending on the scope this may include badge-related tooling, lock picks, drop boxes, USB devices, covert cameras, communications equipment or wireless kit.
+4. **Props** - uniforms, fake passes and other items that support an authorised pretext. A believable appearance can sometimes bypass surprisingly strong controls.
+5. **Creativity** - a good cover story needs to survive basic questioning: who are you, why are you there, who sent you and who can confirm the story?
 
 A pretext has to be coherent. If you are posing as a service engineer, for example, the clothing, equipment, company knowledge and contact details all need to match the story.
 
