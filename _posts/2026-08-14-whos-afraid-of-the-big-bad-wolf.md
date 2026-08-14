@@ -2,7 +2,7 @@
 layout: post
 title: "Who's Afraid of the Big Bad Wolf? Abusing Windows Access Controls"
 date: 2026-08-14
-description: "Understanding Windows ACLs, access tokens and privileges — and how attackers abuse the relationships between them."
+description: "Understanding Windows ACLs, access tokens and privileges - and how attackers abuse the relationships between them."
 tags:
   - Windows
   - Active Directory
@@ -107,7 +107,7 @@ It's effectively saying:
 
 There are two types of ACL associated with a Windows security descriptor.
 
-### DACL — Discretionary Access Control List
+### DACL - Discretionary Access Control List
 
 The **DACL** determines who is allowed or denied access to an object.
 
@@ -128,7 +128,7 @@ One important distinction is that a **NULL DACL** means there are no access rest
 
 This should not be confused with an **empty DACL**, which contains no ACEs and therefore grants no access.
 
-### SACL — System Access Control List
+### SACL - System Access Control List
 
 The **SACL** is primarily concerned with auditing rather than granting access.
 
@@ -327,6 +327,8 @@ Normal applications run using the filtered token.
 
 When an application is elevated through UAC, the elevated process runs using the administrator's full token.
 
+As an experiment run `whoami /priv` is a standard shell vs a "Ran as Administrator" shell. You will see the difference.
+
 This distinction is important when examining processes during a penetration test.
 
 A user being a member of the local Administrators group does not necessarily mean every process running as that user currently possesses an unrestricted administrator security context.
@@ -382,7 +384,7 @@ Kerberos tickets allow that identity to authenticate to services within the doma
 
 Together, these mechanisms allow Windows to manage both local and network authentication and authorisation.
 
-**[DIAGRAM: Logon session → token / Kerberos credentials → local and network resources]**
+![Logon session → token / Kerberos credentials → local and network resources](/assets/img/posts/logonsession.png)
 
 ---
 
@@ -564,7 +566,7 @@ If an attacker can obtain or impersonate a more privileged token, Windows may su
 
 Instead of modifying the house:
 
-> **Become somebody who already has the key.**
+> **Rather than obtain the key, assume the identity of someone who already has it.**
 
 Privileges such as:
 
@@ -627,7 +629,7 @@ Again, rather than thinking:
 
 I find it more useful to think:
 
-> **I changed the Kerberos credentials available to this logon session.**
+> **I changed the Kerberos credentials that are available to this logon session.**
 
 That makes the relationship between:
 
@@ -679,9 +681,9 @@ The individual techniques may look very different.
 
 The underlying objective is often the same:
 
-> **Change either the rules, the identity being evaluated against those rules, or the capabilities available to that identity.**
+> **Change the rules, the identity being evaluated against those rules, or the capability available to that identity.**
 
-And that brings us back to our Three Little Pigs.
+And that brings us back to our Little Pigs.
 
 ACLs, DACLs and ACEs can build a very strong house.
 
@@ -689,23 +691,14 @@ But Windows security is bigger than the house.
 
 Sometimes the Big Bad Wolf doesn't need permission to come through the front door.
 
+**Sometimes, he just blows the house down.**
 ---
 
 ## Further Reading
 
-**[TODO: Microsoft — Access Control Model]**
+[Microsoft - Access Control Model](https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control)
 
-**[TODO: Microsoft — Access Tokens]**
-
-**[TODO: Microsoft — Privileges]**
-
-**[TODO: Microsoft — Security Descriptors]**
-
-**[TODO: BloodHound documentation]**
-
-**[TODO: SpecterOps research]**
-
-**[TODO: Relevant token impersonation research]**
+[Microsoft - Access Tokens](https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens)
 
 ---
 
