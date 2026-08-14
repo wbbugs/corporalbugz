@@ -3,6 +3,7 @@ layout: post
 title: "Who's Afraid of the Big Bad Wolf? Abusing Windows Access Controls"
 date: 2026-08-14
 description: "Understanding Windows ACLs, access tokens and privileges - and how attackers abuse the relationships between them."
+image: /assets/img/posts/initial-hero.webp
 tags:
   - Windows
   - Active Directory
