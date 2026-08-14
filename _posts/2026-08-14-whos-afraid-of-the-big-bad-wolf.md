@@ -2,14 +2,12 @@
 layout: post
 title: "Who's Afraid of the Big Bad Wolf? Abusing Windows Access Controls"
 date: 2026-08-14
-description: "Understanding Windows ACLs, access tokens and privileges - and how attackers abuse the relationships between them."
+updated: 14 Aug 2026
+permalink: /post/whos-afraid-of-the-big-bad-wolf/
 hero: /assets/img/posts/initial-hero.webp
-tags:
-  - Windows
-  - Active Directory
-  - Red Teaming
-  - ACL
-  - Tokens
+tags: [Windows, Active Directory, Red Teaming, ACL, Tokens]
+read_time: 8
+excerpt_text: "Understanding Windows ACLs, access tokens and privileges — and how attackers abuse the relationships between them."
 ---
 
 Windows access control can appear deceptively simple.
